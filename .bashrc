@@ -44,8 +44,6 @@ alias resource="source ~/.bashrc"
 
 alias killjobs="jobs -l > /tmp/.jobs.txt && awk '{print \$2\" \"\$3}' /tmp/.jobs.txt | xargs kill -9 &> /dev/null ; rm /tmp/.jobs.txt &> /dev/null"
 alias killps="ps ux | grep -v 'sshd\|tcsh' | awk '{print \$2;}' | xargs kill -9"
-alias editp4="~/script/editp4.sh"
-alias p4vimdiff="~/script/p4vimdiff.sh"
 
 ########################################
 # CUSTOM FUNCTIONS
