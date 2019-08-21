@@ -17,22 +17,15 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'vim-scripts/gtags.vim'
-"Plug 'xavierd/clang_complete'
 
 "Plug 'Valloric/YouCompleteMe'
 " Initialize plugin system
 
 call plug#end()
 
-" Setting clang-complete path
-"let g:clang_library_path='/home/utils/llvm-3.7.0/lib'
-"let g:clang_library_path='/home/utils/llvm-3.7.0/lib/libclang.so'
-"let g:clang_auto_select=1
-"let g:clang_jumpto_declaration_key="<C-k>"
 set encoding=utf-8
 
 vmap <silent> \ jmPk:!astyle -A2 -y -j -c -p -xe -k1 -W1 -s4 -xn -xc -xl -xk -S -K -Y -m0 -M40 -C --mode=c<cr>V`Pk==:delmarks P<cr>
-"vmap <silent> \ :!astyle -A2 -y -j -c -p -xe -k1 -W1 -s4 -xn -xc -xl -xk -S -K -Y -m0 -M40 -C --mode=c<cr>
 syntax on
 set nocompatible
 " set ai
