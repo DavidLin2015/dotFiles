@@ -74,14 +74,6 @@ set foldlevel=255
 
 vmap c I//<esc>
 
-"map <F1> <Esc>:!makepkg \|&tee make.log<CR>
-"map <F2> <Esc>:!makedbg \|&tee make.log<CR>
-
-"map <F1> <Esc>:w<CR>:set makeprg=makepkg   <CR>:make<CR>
-"map <F2> <Esc>:w<CR>:set makeprg=makedbg   <CR>:make<CR>
-"map <F3> <Esc>:w<CR>:set makeprg=makeprl   <CR>:make<CR>
-"map <F4> <Esc>:w<CR>:set makeprg=makeprldbg<CR>:make<CR>
-
 map <F1> <Esc>:w<CR>:AsyncRun source ~/.bashrc; makecdpkg<CR>:call asyncrun#quickfix_toggle(8, 1)<CR>
 map <F2> <Esc>:w<CR>:AsyncRun source ~/.bashrc; makecddbg<CR>:call asyncrun#quickfix_toggle(8, 1)<CR>
 map <F3> <Esc>:w<CR>:AsyncRun source ~/.bashrc; makecdprl<CR>:call asyncrun#quickfix_toggle(8, 1)<CR>
