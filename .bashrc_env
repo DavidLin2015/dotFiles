@@ -1,0 +1,14 @@
+########################################
+# CUSTOM ENV VARIABLES
+########################################
+
+export SHELL=/home/utils/bash-4.3/bin/bash
+export LC_ALL=en_US.UTF-8
+export TERM=xterm-256color
+export TN_VECTOR_NO_DB=1
+export P4DIFF=vimdiff
+export EDITOR=/home/utils/vim-8.0-lua/bin/vim
+export SCRATCH=/home/scratch.davilin_methodology
+export DISPLAY=sc-xterm-06:6900
+export CURRENTLSF=dc7-sim-e18-095
+

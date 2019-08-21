@@ -1,0 +1,64 @@
+########################################
+# CUSTOM ALIASES
+########################################
+
+alias setvnc="vncserver -geometry 1870x980 -depth 16 -nolisten local"
+alias showvnc="grep \$USER /tmp/vnc_totals"
+
+alias makeall="make NO_PERFORCE=1 LSFBuild DOC=1"
+#alias makepkg="make -j 8 NO_PERFORCE=1 install"
+alias makepkg="make -j 8 NO_PERFORCE=1 install USE_CCACHE=1 USE_CLANG=1"
+alias makeprl="make -j 8 NO_PERFORCE=1 BUILD_LANG=perl install USE_CCACHE=1"
+alias makepy="make -j8 BUILD_LANG=python BUILD_LANG_VERSION=3.6.1 install && make -j8 BUILD_LANG=python BUILD_LANG_VERSION=2.7.10 install"
+alias cleanpy="make clean BUILD_LANG_VERSION=3.6.1 && make clean BUILD_LANG=python BUILD_LANG_VERSION=2.7.10"
+#alias makedbg="make -j 8 install NO_PERFORCE=1 STRIP= NO_OPT=1 CHECK_NDEBUG=0 USE_CCACHE=1"
+#alias makedbg="make -j 8 install NO_PERFORCE=1 STRIP= NO_OPT=1 USE_CCACHE=1"
+alias makedbg="make -j 8 install NO_PERFORCE=1 STRIP= NO_OPT=1 USE_CCACHE=1 USE_CLANG=1"
+alias makecli="~/script/create_p4_client.sh"
+alias makedoc="make BuildDocs DOC=1"
+alias makeprldbg="make -j 8 NO_PERFORCE=1 STRIP= NO_OPT=1 BUILD_LANG=perl install"
+
+alias sch="cd /home/scratch.davilin_methodology"
+alias qa="cd \$NVDEV/qa/vector"
+alias vec="cd \$NVDEV/nvtools/cad/cadlib/vector"
+alias sim="cd \$NVDEV/nvtools/cad/cadlib/simulator"
+alias basic="cd \$NVDEV/nvtools/cad/cadlib/basic"
+alias dev="cd \$NVDEV"
+alias nv="cd \$NVDEV/nvtools"
+alias sdev="source ~/script/setdev.sh"
+alias rcgdb="~/script/cgdb_regress.sh"
+alias snvdevlatest="export NVDEV=/home/nvtools/latest"
+alias pdev="echo \$NVDEV"
+
+alias ssh07="ssh sc-xterm-07"
+alias ssh06="ssh sc-xterm-06"
+alias ssh24="ssh sc-xterm-24"
+alias ssh66="ssh o-xterm-66"
+alias ssh36="ssh o-xterm-36"
+
+alias scs="rm cscope.* ; find ./ -name '*.c' -o -name '*.h' -o -name '*.cc' > cscope.files ; cscope -Rbq -i cscope.files"
+alias make="/home/utils/make-4.2.1/bin/make"
+
+alias doc="w3m -W /home/nvtools/latest/nvtools/lib/docs/tcl/all.html"
+alias doclocal="w3m -W \$NVDEV//nvtools/lib/docs/tcl/all.html"
+alias docperl="w3m -W /home/nvtools/latest/nvtools/lib/docs/perl/all.html"
+alias docperllocal="w3m -W \$NVDEV//nvtools/lib/docs/perl/all.html"
+
+alias vimPlugInstall="vim +PlugInstall"
+
+alias vi="vim"
+alias cgdb="/home/davilin/bin/cgdb -d /home/utils/gdb-7.12.1/bin/gdb"
+
+alias buildnvopt="~/script/build_nvtools_opt.sh"
+alias buildnvdbg="~/script/build_nvtools_dbg.sh"
+alias regressnvvec="~/script/regress_nvtools_vector.sh"
+
+alias diffgold="make RUN_DIFFGOLDEN -f \`pwd\`/Makefile -C RUN.obj_x86_64_linux_rel6_gcc492/ TOP=\`pwd\` DIFFPRG=vimdiff"
+alias cppcheckvim="vim \"+ParseCppcheckReport cppcheck/cppcheck.rpt\""
+
+alias sshlsf="ssh \$CURRENTLSF -t exec bash"
+
+#alias lsfqakill="bjobs | grep o_short |awk '{print $1}' | xargs bkill"
+alias killlsfqa="bkill -q o_short -u davilin 0"
+
+alias psync="p4 sync --parallel=threads=8"

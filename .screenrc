@@ -1,0 +1,71 @@
+startup_message off
+
+# support 256 colors
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# Set hardstatus always on
+# style 1
+#caption always "%{=u .G} %-w%<%{=ub .y}%n %t%{=u .G}%+w "
+#hardstatus alwaysignore
+#hardstatus alwayslastline "%{= .K} [%l]%<%=%{= .W}@%H %=%{= .y} %Y/%m/%d%{= .m} %C %A"
+
+# style 2
+
+caption always "%{=u .G} %-w%<%{=ub .y}%n %t%{=u .G}%+w "
+#hardstatus alwaysignore
+#hardstatus alwayslastline "%{dd} %{= .K} [%l]%<%=%{= .W}@%H %=%{= .y} %Y/%m/%d%{= .m} %0c:%s "
+hardstatus alwayslastline "%{dd} %{= .K} [%l]%<%=%{= .W} %=%{= .y} %Y/%m/%d%{= .m} %0c:%s "
+
+#hardstatus alwayslastline "%B sss %-Lw%{= bw}%n%f %t%{-}%+Lw %=| %M %d %0c:%s "
+
+# Set default encoding using utf8
+#defutf8 on
+
+# Refresh the display when exiting programs
+#altscreen on
+
+# Dynamic title
+shelltitle '$ |bash'
+
+
+# Disable vbell
+vbell off
+maptimeout 5
+#nonblock on
+# Keboard binding
+# bind F11 to move to previous window
+bindkey "^[[1;3D" prev
+# bind F12 to move to next window
+bindkey "^[[1;3C" next 
+# bind Alt`~= to screen0~12
+bindkey "^[c" clear
+bindkey "^[s" split
+bindkey "^[`" select 0
+bindkey "^[1" select 1
+bindkey "^[2" select 2
+bindkey "^[3" select 3
+bindkey "^[4" select 4
+bindkey "^[5" select 5
+bindkey "^[6" select 6
+bindkey "^[7" select 7
+bindkey "^[8" select 8
+bindkey "^[9" select 9
+bindkey "^[0" select 10
+bindkey "^[-" select 11
+bindkey "^[=" select 12
+# bind F7 to detach screen session (to background)
+bindkey "^[d" detach
+# bind F3 to kill current screen window
+bindkey "^[k" kill
+# bind Alt + [key] to rename current screen window
+bindkey "^[t" title
+bindkey "^[w" focus
+bindkey "^[a" screen
+bindkey "^[o" only
+multiuser on
+#acladd wding
+
+sorendition "="
+
+
+defscrollback 10000

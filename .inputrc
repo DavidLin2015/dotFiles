@@ -1,0 +1,13 @@
+set completion-ignore-case on
+set show-all-if-ambiguous on
+
+"\e[1~": beginning-of-line # HOME Key
+"\e[4~": end-of-line       # End  Key
+
+"\C-b":  backward-word
+"\C-f":  forward-word
+
+# next tab(s) will cycle through matches
+#TAB: menu-complete
+# shift tab cycles backward
+#"\e[Z": menu-complete-backward
