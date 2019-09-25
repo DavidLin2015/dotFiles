@@ -67,6 +67,8 @@ function makesim { cd $NVDEV/nvtools/cad/cadlib/simulator; p4 sync ...; cd tn_sh
 
 function jkill { kill -9 %$1; }
 
+function setenv { export $1=$2; }
+
 # Auto cd .. for submodule
 function makecdpkg {
     if [ ! -f Makefile ]; then
