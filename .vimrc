@@ -120,7 +120,7 @@ map <LEADER>=  <C-w>=
 "inoremap <c-u> <c-g>u<c-u>
 "inoremap <c-w> <c-g>u<c-w>
 "vmap <silent> <c-g> y:set hlsearch<CR>:let @/="<c-r>""<CR>:tabe<CR>:!ag "<c-r>"" <cr>"" *.cc *.h<CR>"
-vmap <silent> <c-g> y:set hlsearch<CR>:let @/="\<<c-r>"\>"<CR>:tabe<CR>:grep "<c-r>"" *.cc *.h<CR>"
+vmap <silent> <c-g> y:set hlsearch<CR>:let @/="\<<c-r>"\>"<CR>:tabnew<CR>:grep "<c-r>"" ../*/*.cc ../*/*.h<CR>"
 vmap <silent> <c-h> y:set hlsearch<CR>:let @/="\<<c-r>"\>"<CR>:tabnew<CR>:grep "<c-r>"" ../*/*.cc ../*/*.h<CR>"
 
 map <silent> <LEADER>m :set hlsearch<CR>:let @/="<C-R><C-W>"<CR>:call HighlightNearCursorSwitch(1)<CR>
