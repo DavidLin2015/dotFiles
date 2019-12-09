@@ -341,4 +341,3 @@ let CtagsCscope_Auto_Map = 1
 let GtagsCscope_Quiet = 1
 map <LEADER>g :GtagsCursor<CR>
 
-
