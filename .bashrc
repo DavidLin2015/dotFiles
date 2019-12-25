@@ -49,7 +49,7 @@ alias killps="ps ux | grep -v 'sshd\|tcsh' | awk '{print \$2;}' | xargs kill -9"
 # CUSTOM FUNCTIONS
 ########################################
 
-function rcase { make TEST_CASES=../$1 DIFFPRG=vimdiff; }
+function rcase { make TEST_CASES=../$1 DIFFPRG=/home/davilin/bin/vimdiff; }
 function snvdev { export NVDEV=$1; }
 function chdev { cd `~/script/chdev.sh $1`; . ~/script/setdev.sh $1; }
 function review { /home/nv/utils/p4review/p4review.pl -diff vimdiff /home/p4review/cl-$1.p4r; }
