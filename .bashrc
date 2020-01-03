@@ -176,3 +176,7 @@ _comp() {
         'p==substr($0,0,length(p))'))
 }
 
+ts() {
+    p4v -p p4hw:2001 -c nvtools_davilin -u davilin -cmd "annotate `p4 where $1 | grep ^//hw | cut -d' ' -f1`"
+}
+
