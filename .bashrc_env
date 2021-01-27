@@ -10,5 +10,5 @@ export P4DIFF=vimdiff
 export EDITOR=/home/utils/vim-8.0-lua/bin/vim
 export SCRATCH=/home/scratch.davilin_methodology
 export DISPLAY=10.126.161.39:1
-export CURRENTLSF=dcg-sim-06b13-032
+export CURRENTLSF=dcg-sim-02b7-206
 
