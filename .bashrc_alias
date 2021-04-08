@@ -62,3 +62,4 @@ alias sshlsf="ssh \$CURRENTLSF -t exec bash"
 alias killlsfqa="bkill -q o_short -u davilin 0"
 
 alias psync="p4 sync --parallel=threads=8"
+alias cv="xclip -o"
