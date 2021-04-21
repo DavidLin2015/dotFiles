@@ -53,7 +53,7 @@ alias buildnvopt="~/script/build_nvtools_opt.sh"
 alias buildnvdbg="~/script/build_nvtools_dbg.sh"
 alias regressnvvec="~/script/regress_nvtools_vector.sh"
 
-alias diffgold="make RUN_DIFFGOLDEN -f \`pwd\`/Makefile -C RUN.obj_x86_64_linux_rel6_gcc492/ TOP=\`pwd\` DIFFPRG=vimdiff"
+alias diffgold="make RUN_DIFFGOLDEN -f \`pwd\`/Makefile -C RUN.obj_x86_64_linux_rel6_gcc492/ TOP=\`pwd\` DIFFPRG=/home/utils/vim-8.2.1703/bin/vimdiff"
 alias cppcheckvim="vim \"+ParseCppcheckReport cppcheck/cppcheck.rpt\""
 
 alias sshlsf="ssh \$CURRENTLSF -t exec bash"

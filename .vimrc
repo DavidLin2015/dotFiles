@@ -18,15 +18,16 @@ Plug 'tpope/vim-repeat'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'vim-scripts/gtags.vim'
 
+Plug 'prabirshrestha/vim-lsp', { 'tag': 'v0.1.3'}
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 "Plug 'Valloric/YouCompleteMe'
 " Initialize plugin system
 
 call plug#end()
 
-set encoding=utf-8
-
 vmap <silent> \ jmPk:!astyle -A2 -y -j -c -p -xe -k1 -W1 -s4 -xn -xc -xl -xk -S -K -Y -m0 -M40 -C --mode=c<cr>V`Pk==:delmarks P<cr>
-syntax on
 set nocompatible
 " set ai
 set shiftwidth=4
@@ -46,6 +47,7 @@ set history=100
 set cursorline
 set number
 
+syntax on
 colorscheme torte
 "colorscheme desert
 set background=dark
@@ -340,4 +342,37 @@ let GtagsCscope_Auto_Load = 1
 let CtagsCscope_Auto_Map = 1
 let GtagsCscope_Quiet = 1
 map <LEADER>g :GtagsCursor<CR>
+
+" vim-lsp setting
+if executable('/home/utils/llvm-11.0.0/bin/clangd')
+augroup lsp_clangd
+    autocmd!
+    autocmd User lsp_setup call lsp#register_server({
+    \ 'name': 'clangd',
+    \ 'cmd': {server_info->['/home/utils/llvm-11.0.0/bin/clangd']},
+    \ 'whitelist': ['c', 'cpp'],
+    \ })
+augroup end
+endif
+
+noremap <leader>rd :LspDefinition<cr>
+noremap <leader>rr :LspReferences<cr>
+noremap <leader>rv :LspHover<cr>
+noremap <leader>rn :LspRename<cr>
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_float_cursor = 1
+let g:lsp_diagnostics_echo_delay = 0
+let g:lsp_diagnostics_float_delay = 0
+let g:asyncomplete_auto_popup = 0
+let g:update_in_insert = 0
+"autocmd User lsp_float_opened
+"            \ call popup_setoptions(lsp#ui#vim#output#getpreviewwinid(),
+"            \              {'border': [1, 1, 1, 1],
+"            \               'padding': [1, 1, 1, 1],
+"            \               'borderchars': ['─', '│', '─', '│', '╭', '╮', '╯', '╰'],
+"            \              })
+hi Pmenu ctermfg=2 ctermbg=black
+set ambiwidth=double
+set encoding=utf-8
 
