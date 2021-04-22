@@ -1,7 +1,7 @@
 silent! call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline', { 'tag': 'v0.10' }
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
@@ -18,7 +18,7 @@ Plug 'tpope/vim-repeat'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'vim-scripts/gtags.vim'
 
-Plug 'prabirshrestha/vim-lsp', { 'tag': 'v0.1.3'}
+Plug 'prabirshrestha/vim-lsp', { 'tag': 'v0.1.4'}
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
@@ -254,6 +254,16 @@ highlight ModeMsg ctermfg=green
 
 set noshowmode
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+"function! Haha()
+"    if len(lsp#get_progress()) == 0
+"        return 'David'
+"    endif
+"    return lsp#get_progress()[0]
+"endfunction
+""call airline#parts#define_function('foo', lsp#get_progress())
+"call airline#parts#define_function('foo', 'Haha')
+"
+"let g:airline_section_y = airline#section#create_right(['ffenc', 'foo'])
 
 map <silent><C-n> :NERDTreeToggle<CR>
 "set showbreak=↪
@@ -364,8 +374,9 @@ let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_float_cursor = 1
 let g:lsp_diagnostics_echo_delay = 0
 let g:lsp_diagnostics_float_delay = 0
-let g:asyncomplete_auto_popup = 0
+"let g:asyncomplete_auto_popup = 0
 let g:update_in_insert = 0
+let g:lsp_diagnostics_signs_enabled = 0
 "autocmd User lsp_float_opened
 "            \ call popup_setoptions(lsp#ui#vim#output#getpreviewwinid(),
 "            \              {'border': [1, 1, 1, 1],
